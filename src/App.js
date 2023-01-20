@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Buscador from "./Componentes/Buscador.jsx";
+import MiApi from "./Componentes/MiApi.jsx";
+import "./Estilos/Estilos.css"
 
 function App() {
+
+  const [buscador, setBuscador] = useState('');
+  const [ordenar, setOrdenar] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div>
+      {/* <Header tituli={"hola"}></Header> */}
+      <Buscador setBuscador={setBuscador} setOrdenar={setOrdenar} ></Buscador>
+      <MiApi buscador={buscador} ordenar={ordenar}></MiApi>
     </div>
   );
 }
