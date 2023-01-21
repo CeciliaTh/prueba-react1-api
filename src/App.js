@@ -1,7 +1,10 @@
 import { useState } from "react";
 import Buscador from "./Componentes/Buscador.jsx";
 import MiApi from "./Componentes/MiApi.jsx";
-import "./Estilos/Estilos.css"
+import "./Estilos/Estilos.css" 
+
+import "./Imagenes/Fondo-Feriados3.png"
+
 
 function App() {
 
