@@ -17,7 +17,7 @@ const MiApi = ({ buscador, ordenar }) => {
 
         ordenando();
 
-    }, [ ordenar ]);
+    }, [ordenar]);
 
     async function getFeriados() {
         const res = await fetch("https://api.victorsanmartin.com/feriados/en.json");
@@ -28,40 +28,53 @@ const MiApi = ({ buscador, ordenar }) => {
     }
 
     function ordenando() {
-        const nuevoOrdenado = feriados.sort((a, b) => 
+        const nuevoOrdenado = feriados.sort((a, b) =>
             a.title.toLowerCase().localeCompare(b.title.toLowerCase()))
-          setFeriados([...nuevoOrdenado])
-        }
-    
-   
+        setFeriados([...nuevoOrdenado])
+    }
+
+
     return (
         cargado ?
             <div>
                 <h1>Feriados</h1>
+                <div className='container grilla'>
+                    <div className="row border-bottom border-dark mb-2 pb-2" >
+                        <div className="col-2" >
+                            <strong>FECHA</strong>
+                        </div>
+                        <div className="col">
+                        <strong>DESCRIPCIÓN</strong>
+                        </div>
+                        <div className="col">
+                        <strong>TIPO DE FERIADO</strong>
+                        </div>
+                    </div>
+                </div>
 
                 {feriados.filter((f) => {
                     if (buscador === '') {
-                        return feriados.map((f) => 
-                            (
-                                <div className='container' key={f.date}>
-                                    <div className="row border-bottom border-dark mb-2 pb-2" >
-                                        <div className="col-2" >
-                                            {f.date}
-                                        </div>
-                                        <div className="col">
-                                            {f.title}
-                                        </div>
-                                        <div className="col">
-                                            {f.extra}
-                                        </div>
+                        return feriados.map((f) =>
+                        (
+                            <div className='container grilla' key={f.date}>
+                                <div className="row border-bottom border-dark mb-2 pb-2" >
+                                    <div className="col-2" >
+                                        {f.date}
+                                    </div>
+                                    <div className="col">
+                                        {f.title}
+                                    </div>
+                                    <div className="col">
+                                        {f.extra}
                                     </div>
                                 </div>
-                            )
+                            </div>
+                        )
                         )
                     } else if (f.extra.toLowerCase().includes(buscador.toLowerCase())) { return f }
                 }).map((f) =>
                 (
-                    <div className='container' key={f.date}>
+                    <div className='container grilla' key={f.date}>
                         <div className="row border-bottom border-dark mb-2 pb-2">
                             <div className="col-2" >
                                 {f.date}

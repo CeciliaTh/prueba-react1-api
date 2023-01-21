@@ -1,4 +1,19 @@
 body{
     /* background-color: gold; */
     background-image: url("../Imagenes/Fondo-Feriados3.png");
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    font-family: 'Vast Shadow', cursive;
+    text-align: center;
+}
+
+.barra{
+    font-family: 'Stint Ultra Condensed', cursive;
+font-size: 3em;
+
+}
+
+.grilla{
+    font-family: 'Orbitron', sans-serif;
 }
