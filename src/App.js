@@ -9,7 +9,7 @@ import "./Imagenes/Fondo-Feriados3.png"
 function App() {
 
   const [buscador, setBuscador] = useState('');
-  const [ordenar, setOrdenar] = useState('');
+  const [ordenar, setOrdenar] = useState(false);
 
   return (
     

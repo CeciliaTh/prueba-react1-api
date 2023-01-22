@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 const MiApi = ({ buscador, ordenar }) => {
     const [feriados, setFeriados] = useState([]);
     const [cargado, setCargado] = useState(false);
-    //const [ordenado, setOrdenado] = useState({});
+
 
 
 
